@@ -8,7 +8,7 @@ version:             0.1.0.0
 -- synopsis:
 -- description:
 -- bug-reports:
-license:             NONE
+license:             BSD3
 license-file:        LICENSE
 author:              Ajay Eeralla
 maintainer:          ajay.eeralla@gmail.com
@@ -19,84 +19,82 @@ extra-source-files:  CHANGELOG.md
 
 library
   hs-source-dirs:     src
-  build-depends:      base >=4.14 && <4.15
-  -- exposed-modules:    Data.AST
+  build-depends:      base >=4.14
+  default-language:   Haskell2010
+  exposed-modules:    Data.AST
 
 
-executable Main
-  main-is:             Main.hs
-  other-modules:       Data.AST
-  -- other-extensions:
-  build-depends:       base >=4.14 && <4.15
-  hs-source-dirs:      src
-                       Programs
-  default-language:    Haskell2010
-  -- exposed-modules:     Data.AST
+-- executable Main
+--   main-is:             Main.hs
+--   other-modules:       Data.AST
+--   -- other-extensions:
+--   build-depends:       base >=4.14 && <4.15
+--   hs-source-dirs:      src
+--                        Programs
+--   default-language:    Haskell2010
+--   -- exposed-modules:     Data.AST
 
 executable Reader
   main-is:             Reader.hs
-  other-modules:       Data.AST
-  -- other-extensions:
-  build-depends:       base >=4.14 && <4.15
+  build-depends:       base >=4.14
                     ,  mtl
                     ,  HaskellMonadApp
-  hs-source-dirs:      src
-                       Programs
+  hs-source-dirs:      Programs
   default-language:    Haskell2010
   ghc-options:         -main-is Reader
   -- exposed-modules:     Data.AST
 
-executable ReaderT
-  main-is:             ReaderT.hs
-  other-modules:       Data.AST
-                       Reader
-  -- other-extensions:
-  build-depends:       base >=4.14 && <4.15
-                    ,  mtl
-                    ,  HaskellMonadApp
-  hs-source-dirs:      src
-                       Programs
-  default-language:    Haskell2010
-  ghc-options:         -main-is ReaderT
-  -- exposed-modules:     Data.AST
-
-executable Maybe
-  main-is:             Maybe.hs
-  other-modules:       Data.AST
-  -- other-extensions:
-  build-depends:       base >=4.14 && <4.15
-                    ,  mtl
-                    ,  HaskellMonadApp
-  hs-source-dirs:      src
-                       Programs
-  default-language:    Haskell2010
-  ghc-options:         -main-is Maybe
-
-executable MaybeT
-  main-is:             MaybeT.hs
-  other-modules:       Maybe
-                       Data.AST
-  -- other-extensions:
-  build-depends:       base >=4.14 && <4.15
-                    ,  mtl
-                    ,  HaskellMonadApp
-  hs-source-dirs:      src
-                       Programs
-  default-language:    Haskell2010
-  ghc-options:         -main-is MaybeT
-
-executable State
-  main-is:             State.hs
-  build-depends:       base >=4.14 && <4.15
-                    ,  mtl
-  hs-source-dirs:      Programs
-  default-language:    Haskell2010
-  ghc-options:         -main-is State
-
-executable Either
-  main-is:             Either.hs
-  build-depends:       base >=4.14 && <4.15
-                    ,  mtl
-  hs-source-dirs:      Programs
-  default-language:    Haskell2010
-  ghc-options:         -main-is Either
+-- executable ReaderT
+--   main-is:             ReaderT.hs
+--   other-modules:       Data.AST
+--                        Reader
+--   -- other-extensions:
+--   build-depends:       base >=4.14 && <4.15
+--                     ,  mtl
+--                     ,  HaskellMonadApp
+--   hs-source-dirs:      src
+--                        Programs
+--   default-language:    Haskell2010
+--   ghc-options:         -main-is ReaderT
+--   -- exposed-modules:     Data.AST
+-- 
+-- executable Maybe
+--   main-is:             Maybe.hs
+--   other-modules:       Data.AST
+--   -- other-extensions:
+--   build-depends:       base >=4.14 && <4.15
+--                     ,  mtl
+--                     ,  HaskellMonadApp
+--   hs-source-dirs:      src
+--                        Programs
+--   default-language:    Haskell2010
+--   ghc-options:         -main-is Maybe
+-- 
+-- executable MaybeT
+--   main-is:             MaybeT.hs
+--   other-modules:       Maybe
+--                        Data.AST
+--   -- other-extensions:
+--   build-depends:       base >=4.14 && <4.15
+--                     ,  mtl
+--                     ,  HaskellMonadApp
+--   hs-source-dirs:      src
+--                        Programs
+--   default-language:    Haskell2010
+--   ghc-options:         -main-is MaybeT
+-- 
+-- executable State
+--   main-is:             State.hs
+--   build-depends:       base >=4.14 && <4.15
+--                     ,  mtl
+--   hs-source-dirs:      Programs
+--   default-language:    Haskell2010
+--   ghc-options:         -main-is State
+-- 
+-- executable Either
+--   main-is:             Either.hs
+--   build-depends:       base >=4.14 && <4.15
+--                     ,  mtl
+--   hs-source-dirs:      Programs
+--   default-language:    Haskell2010
+--   ghc-options:         -main-is Either

@@ -1,18 +1,18 @@
 module Data.AST
-    ( TemperatureScale(..)
-    , WeatherStatus(..)
-    )
+  ( TemperatureScale(..)
+  , WeatherStatus(..)
+  )
 where
 
 data TemperatureScale =
-        Celcius
-    |   Fahrenheit
+    Celcius
+    | Fahrenheit
     deriving (Eq, Ord, Show)
 
 data WeatherStatus =
-        Clear
-    |   Clouds
-    |   Rain
-    |   Snow
+    Clear
+    | Clouds
+    | Rain
+    | Snow
     deriving (Eq, Ord, Show)
 

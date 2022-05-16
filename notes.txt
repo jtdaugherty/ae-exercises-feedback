@@ -1,0 +1,16 @@
+Style notes:
+
+- Use four-space indentation, e.g.
+
+someFunction :: IO ()
+someFunction = do
+    stuff
+
+rather than
+
+someFunction :: IO ()
+someFunction = do
+               stuff
+
+- Update executables to depend on Haskell library section (remove "src"
+  from executable build directories)

@@ -8,11 +8,12 @@ where
 import Data.AST
 
 data WeatherConditions =
-        WeatherConditions
-            { temperature :: Maybe Int
-            , temperatureScale :: Maybe TemperatureScale
-            , weatherStatus :: Maybe String
-            }
+    WeatherConditions { temperature :: Maybe Int
+                      , temperatureScale :: Maybe TemperatureScale
+                      , weatherStatus :: Maybe String
+                      }
+
+-- temperature :: WeatherConditions -> Maybe Int
 
 weather :: WeatherConditions -> Maybe String
 weather wc =
@@ -24,6 +25,16 @@ weather wc =
             }   -> Just $ "The current weather conditions are "++ status++ ", " ++ show temp ++ " degrees " ++ show scale
         WeatherConditions {..} -> Nothing
 
+someOtherFunction :: Maybe String
+someOtherFunction = Nothing
+
+weather :: WeatherConditions -> Maybe String
+weather wc = do
+    temp <- temperature wc
+    scale <- temperatureScale wc
+    status <- weatherStatus wc
+    return $ "The current weather conditions are "++ status++ ", " ++ show temp ++ " degrees " ++ show scale
+
 wc = WeatherConditions
         { temperature = Just 53
         , temperatureScale = Just Fahrenheit
@@ -31,6 +42,6 @@ wc = WeatherConditions
         }
 
 main :: IO()
-main =  do
-        let Just v = weather wc
-        putStrLn v
+main = do
+    let Just v = weather wc
+    putStrLn v
